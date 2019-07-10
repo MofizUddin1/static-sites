@@ -52,7 +52,7 @@ for (var i = 0; i < btn.length; i++) {
 var todo = document.getElementById("text");
 todo.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
-	  
+	
 	var li = document.createElement("li");
 	li.setAttribute("onClick", "lineOver()");
 	var span = document.createElement("span");
@@ -69,6 +69,7 @@ todo.addEventListener("keyup", function(event) {
 	li.appendChild(span);
 	li.appendChild(node);
 	element.appendChild(li);
+	todo.value = ""; 
 	 
   }
 });
