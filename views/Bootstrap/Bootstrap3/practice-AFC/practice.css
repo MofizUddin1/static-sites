@@ -1,0 +1,125 @@
+body{
+
+}
+.navbar-default{
+	padding-top: 10px;
+	height: 120px;
+	align-content: center;
+	border-bottom:4px solid red;
+
+}
+
+.nav .navbar-nav{
+	padding-top: 20px;
+	font-size: 32px;
+	margin-bottom: 100px;
+	height: 100px;
+	color: red;
+}
+.nav>li>a{
+	font-size: 1.2em;
+	color: red;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: red;
+	font-family: 'Amatic SC', cursive;
+	font-size: 2.5em;
+	}
+
+}
+button .fas .fa-search{
+
+	padding;0;
+}
+
+
+.image2{
+	height: 75px;
+	width:75px;
+	border: white 0px;
+
+}
+
+.padder{
+	padding-top: 20px;
+}
+.padder50{
+	padding-top: 50px;
+}
+.submit{
+	float:left;
+
+
+}
+
+.searchbar button{
+	height: 100%;
+	background-color: red;
+	position: relative;
+}
+#button1{
+	color: white;
+	margin:0;
+	height: 35px;
+	margin:0;
+	padding:5px;
+	border-radius: 0 15px 15px 0;
+	width: 35px;
+	border:red solid 2px;
+	align-content: center;
+	background-color: red;
+
+}
+#button1:hover{
+	background-color: white;
+	color: red;
+}
+#button1:active{
+	background-color: red;
+}
+input[type="text"]{
+	font-size: 18px;
+	height: 35px;
+	margin:0;
+	padding:0;
+	padding-left: 18px;
+	border-radius: 15px 0 0 15px;
+	border:red solid 2px;
+	color: black;
+	
+
+}
+
+
+.t2>img{
+	border:solid red 2px;
+}
+
+.textspace{
+	margin-bottom: 50px;
+}
+h1{
+	padding-bottom: 30px;
+	font-size: 4em;
+	font-family: 'Amatic SC', cursive;
+}
+
+p{
+	font-family: 'Rajdhani', sans-serif;
+	font-size: 1.5em;
+}
+.fas {
+	line-height: 0;
+	}
+
+hr{
+	border: 2px solid red;
+	display: block;
+	margin-left: 0;
+  margin-right: 0;
+  border: 0;
+    height: 1px;
+    background: red;
+    background-image: linear-gradient(to right, #ccc, red, #ccc);
+}

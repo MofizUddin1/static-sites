@@ -1,0 +1,57 @@
+img{
+
+	width: 30%;
+	float: left;
+	margin:1.66%;
+}
+h1{
+	font-family: 'Amatic SC', cursive;
+	margin-left: 1.66%;
+	text-transform: uppercase;
+	width: 96.64%;
+	border-bottom: 3px solid grey;
+	padding-bottom: 20px;
+	font-size: 50px;
+}
+#images{
+	padding-bottom: 20px;
+	float: left;
+
+}
+
+#lin{
+	float: left;
+	border-top: 3px grey solid;
+	margin-left: 1.66%;
+	width: 96.64%;
+	padding-top: 20px;
+}
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: #C0C0C0;
+}
+
+/* selected link */
+a:active {
+  color: grey;
+}
+
+a{
+	padding:10px;
+	border: 2px grey solid;
+	text-align: center;
+	background-color: grey;
+	text-decoration: none;
+	text-transform: uppercase;
+
+}

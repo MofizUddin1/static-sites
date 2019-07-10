@@ -1,0 +1,203 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Circles</title>
+  <link rel="stylesheet" href="../patatap-assets/css/circles.css"/>
+  <script type="text/javascript" src="../patatap-assets/js/paper-full.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+  <script type="text/paperscript" canvas="myCanvas">
+  var circles =[];
+  var keyData = {
+    a:{
+     color:"red",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/bubbles.mp3']
+    })
+    },
+    b:{
+     color:"green",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/clay.mp3']
+    })
+    },
+    c:{
+     color:"blue",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/confetti.mp3']
+    })
+    },
+    d:{
+     color:"purple",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/corona.mp3']
+    })
+    },
+    e:{
+     color:"yellow",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/dotted-spiral.mp3']
+    })
+    },
+    f:{
+     color:"white",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/flash-1.mp3']
+    })
+    },
+    g:{
+     color:"lilac",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/flash-2.mp3']
+    })
+    },
+    h:{
+     color:"pink",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/flash-3.mp3']
+    })
+    },
+    i:{
+     color:"gold",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/glimmer.mp3']
+    })
+    },
+    j:{
+     color:"silver",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/moon.mp3']
+    })
+    },
+    k:{
+     color:"brown",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/pinwheel.mp3']
+    })
+    },
+    l:{
+     color:"navy",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/piston-1.mp3']
+    })
+    },
+    m:{
+     color:"steelblue",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/piston-2.mp3']
+    })
+  },
+    n:{
+     color:"red",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/piston-3.mp3']
+    })
+    },
+    o:{
+     color:"navy",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/corona.mp3']
+    })
+    },
+    p:{
+     color:"yellow",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/bubbles.mp3']
+    })
+    },
+    q:{
+     color:"steelblue",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/piston-1.mp3']
+    })
+    },
+    r:{
+     color:"green",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/piston-2.mp3']
+    })
+    },
+    s:{
+     color:"grey",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/piston-3.mp3']
+    })
+    },
+    t:{
+     color:"black",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/moon.mp3']
+    })
+    },
+    u:{
+     color:"red",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/glimmer.mp3']
+    })
+    },
+    v:{
+     color:"aqua",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/pinwheel.mp3']
+    })
+    },
+    w:{
+     color:"teal",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/flash-1.mp3']
+    })
+    },
+    x:{
+     color:"green",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/flash-2.mp3']
+    })
+    },
+    y:{
+     color:"red",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/flash-3.mp3']
+    })
+    },
+    z:{
+     color:"steelblue",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/wipe.mp3']
+    })
+    }
+
+
+
+  }
+
+  function onKeyDown(event) {
+    if (keyData[event.key]){
+      var newCircle = new Path.Circle(new Point(view.size.width*Math.random(),view.size.height*Math.random()),100);
+      newCircle.fillColor = keyData[event.key].color;
+      keyData[event.key].sounds.play();
+      circles.push(newCircle);
+    }
+
+
+
+
+
+  }
+  function onFrame(e) {
+	// Each frame, change the fill color of the path slightly by
+	// adding 1 to its hue:
+  for (var i = 0; i < circles.length; i++) {
+    circles[i].fillColor.hue += 1;
+    circles[i].scale(0.95);
+    if(circles[i].area < 1){
+      circles[i].remove(); // remove the circle from the canvas
+      circles.splice(i, 1); // remove the circle from the array
+    }
+  }
+}
+
+</script>
+</head>
+<body>
+  <canvas id="myCanvas" resize></canvas>
+</body>
+</html>
