@@ -8,12 +8,12 @@ $("ul").on("click",".delete",function(event){
   $(this).parent().fadeOut(1000,function(){
     $(this).remove();
   });
-})
+});
 $("input[type='text']").on("keypress",function(event){
   if(event.which === 13){
 
     var newItem = $(this).val();
-    $("ul").append("<li><span class='delete'><i class='far fa-trash-alt'></i> </span>" + newItem + "</li>")
+    $("ul").append("<li><span class='delete'><i class='far fa-trash-alt'></i> </span>" + newItem + "</li>");
     $(this).val("");
   }
 });
