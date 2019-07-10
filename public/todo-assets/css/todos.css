@@ -8,6 +8,10 @@
   color: grey;
   text-decoration: line-through;
 }
+.fade-out{
+	opacity:0;
+	display:none;
+}
 h1{
   background: #2980b9;
   color: white;

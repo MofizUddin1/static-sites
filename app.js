@@ -1,5 +1,6 @@
 var express 		= require("express"),
  	app 			= express();
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.get("/",(req,res)=>{
