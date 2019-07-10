@@ -1,3 +1,6 @@
+import $ from 'jquery';
+window.jQuery = window.$ = $;
+$(selector).hide();
 //check off specific todos by clicking
 $("ul").on("click", "li", function(){
   $(this).toggleClass("greyOut");
