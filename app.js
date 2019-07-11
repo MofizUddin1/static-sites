@@ -21,6 +21,9 @@ app.get("/photo-grid",(req,res)=>{
 app.get("/candy",(req,res)=>{
 	res.render("Bootstrap/Bootstrap4/candy/index");
 });
+app.get("/questionnaire",(req,res)=>{
+	res.render("Question-Game/index");
+});
 app.listen(process.env.PORT,process.env.IP,()=>{
 	console.log("server started");
 });
