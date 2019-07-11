@@ -163,11 +163,14 @@
      sounds: new Howl({
      src: ['../patatap-assets/sounds/wipe.mp3']
     })
+    },
+	0:{
+     color:"steelblue",
+     sounds: new Howl({
+     src: ['../patatap-assets/sounds/wipe.mp3']
+    })
     }
-
-
-
-  }
+}
 
   function onKeyDown(event) {
     if (keyData[event.key]){
@@ -175,13 +178,34 @@
       newCircle.fillColor = keyData[event.key].color;
       keyData[event.key].sounds.play();
       circles.push(newCircle);
-    }
-
-
-
-
-
-  }
+	  }
+	}
+	function onMouseDown(event) {
+   		var num = Math.floor(Math.random() * 6) + 1 ; 
+		var key = 0;
+		if(num===1){
+			key = "a";
+		}
+		if(num===2){
+			key = "b";
+		}
+		if(num===3){
+			key = "c";
+		}
+		if(num===4){
+			key = "d";
+		}
+		if(num===5){
+			key = "e";
+		}
+		if(num===6){
+			key = "f";
+		}
+      var newCircle = new Path.Circle(new Point(event.point,event.point),100);
+      newCircle.fillColor = keyData[key].color;
+      keyData[key].sounds.play();
+      circles.push(newCircle);
+	}
   function onFrame(e) {
 	// Each frame, change the fill color of the path slightly by
 	// adding 1 to its hue:
@@ -194,10 +218,19 @@
     }
   }
 }
+setTimeout(function(){
+    document.getElementById('aap').className = 'waa';
+}, 3000);
+setTimeout(function(){
+    document.getElementById('aap').className = 'display-none';
+}, 6000);
 
 </script>
 </head>
 <body>
+	<h1 id="aap">
+		<span class="blue">Press</span> <span class="green">any </span><span class="yellow">Key</span> <span class="red">(A-Z)</span>
+	</h1>
   <canvas id="myCanvas" resize></canvas>
 </body>
 </html>
