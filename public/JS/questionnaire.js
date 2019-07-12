@@ -1,7 +1,16 @@
 var players = ["Gareth Barry", "Ryan Giggs","David James","Gary Speed",
 				"Emile Heskey","Rio Ferdinand","Steven Gerrard","Sol Campbell","Paul Scholes",
 				"Jermain Defoe","John Terry","Wayne Rooney","Michael Carrick","Peter Crouch",
-				"Petr Čech","Alan Shearer","Gareth Southgate","Danny Murphy"];
+				"Petr Čech","Alan Shearer","Gareth Southgate","Danny Murphy",
+			  	"Tony Adams","Mehdi Abeid","Rolando Aarons","Russell Anderson",
+			   	"Samassi Abou","Martin Albrechtsen","Hope Akpan","Alisson",
+			   	"Ben Alnwick","Shola Ameobi","Ricky Álvarez","Markus Babbel",
+			   	"Leighton Baines","Ibrahima Bakayoko","Tiémoué Bakayoko","Slaven Bilić",
+			   	"Kingsley Black","Wilfried Bony","Santi Cazorla","Djibril Cissé",
+			   	"Stan Collymore","Aaron Cresswell","Jermain Defoe","Didier Deschamps",
+			   	"Virgil van Dijk","Lee Dixon","Danny Drinkwater","Didier Drogba",
+			   	"Cesc Fàbregas","Edu Gaspar","Emmanuel Eboué","Gilberto Silva"
+			  ];
 
 var Questions = [
 	{
@@ -39,6 +48,50 @@ var Questions = [
 	{
 		q: "Which player went through the Ajax youth system, played for Ajax and became Assistant Manager at the club in 2011?",
 		a: "Denis Bergkamp"
+	},
+	{
+		q:"Who won the PFA player of the year award for the 18/19 season?",
+		a:"Virgil Van Dijk"
+	},
+	{
+		q:"Who was the first ever winner of the Premier League’s Golden Boot?",
+		a:"Teddy Sheringham"
+	},
+	{
+		q:"Who scored the first Premier League hat-trick?",
+		a:"Eric Cantona"
+	},
+	{
+		q:"Who scored the goal that enabled the Republic of Ireland to beat Italy at the 1994 World Cup finals?",
+		a:"Ray Houghton"
+	},
+	{
+		q:"Name the player that, aged forty, was the oldest World Cup winning captain?",
+		a:"Dino Zoff"
+	},
+	{
+		q:"Who is the highest scorer in World Cup finals for the Netherlands, with seven goals?",
+		a:"Johnny Rep"
+	},
+	{
+		q:"Which player won the World Cup Young Player award in 2018?",
+		a:"Kylian Mbappe"
+	},
+	{
+		q:"Name the Dutch footballer who was voted “European Player of the Century” in 1999.",
+		a:"Johan Cruyff"
+	},
+	{
+		q:"Who was Jose Mourinho’s first signing at Chelsea?",
+		a:"Paulo Ferreira"
+	},
+	{
+		q:"In 2005, Newcastle’s Lee Bowyer had an on-pitch scrap with which team-mate?",
+		a:"Kieron Dyer"
+	},
+	{
+		q:"Which player holds the record for scoring the most goals in his debut Premier League season?",
+		a:"Kevin Phillips"
 	}
 ];
 
@@ -61,21 +114,22 @@ $( ".select" ).click(function() {
 		$( ".select" ).each(function() {
 			$(this).animate({"opacity": 1});
 			$(this).fadeOut(1000);
-			$(".next").delay(1600).fadeIn(500);
+			$(".next").show();
 		});
 		
 	}
  
 });
 $(".next").click(function(){
+	$(".next").hide();
 	$("#message").removeClass("correct-txt");
-	$( ".select" ).delay(500).each(function() {
+	$( ".select" ).each(function() {
 			$(this).removeClass("correct");
 			$(this).removeClass("incorrect");
 		});
 			
 	start();
-	$(".next").fadeOut();
+	
 	$( ".select" ).each(function() {
 		$(this).fadeIn(1000);
 	});
@@ -108,7 +162,7 @@ function getAnswers(question){
 			count++;
 		}
 	}
-	arr[Math.floor(Math.random() * 4) + 1] = Questions[question].a;
+	arr[Math.floor(Math.random() * 3) + 1] = Questions[question].a;
 	return arr;
 	
 }
