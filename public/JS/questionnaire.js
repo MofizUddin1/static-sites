@@ -97,50 +97,87 @@ var Questions = [
 
 var question = "";
 var answers = [];
+var score = 0;
+var round = 1;
+var points = 4;
 $( ".select" ).click(function() {
-  
 	
-	if($(this).text()!== Questions[question].a){
-		
+  if($(this).text()!== Questions[question].a){
+	  	points--;
 		$(this).addClass("incorrect");
 		$(this).animate({"opacity": 0});
 		$("#message").addClass("incorrect-txt");
 		$("#message").text("Try Again!");
+	  	
 	}else{
+		score += points;
+		$("#score").text(score);
 		$(this).addClass("correct");
 		$("#message").removeClass("incorrect-txt");
 		$("#message").addClass("correct-txt");
 		$("#message").text("Correct!");
 		$( ".select" ).each(function() {
 			$(this).animate({"opacity": 1});
-			$(this).fadeOut(1000);
-			$(".next").show();
+			$(this).fadeOut(1500);
 		});
-		
-	}
- 
+		$(".next").delay(2000).fadeIn();
+		$( ".score" ).each(function() {
+		$(this).delay(2000).fadeIn();
+		});
+		}
 });
 $(".next").click(function(){
-	$(".next").hide();
-	$("#message").removeClass("correct-txt");
-	$( ".select" ).each(function() {
-			$(this).removeClass("correct");
-			$(this).removeClass("incorrect");
+	if(round>=10){
+		$(".next").hide();
+		$("#qnum").animate({"opacity": 0});
+		$("#question").animate({"opacity": 0});
+		$("#message").removeClass("incorrect-txt");
+		$("#message").removeClass("correct-txt");
+		$("#message").addClass("end-txt");
+		$("#message").text("QUESTIONNAIRE OVER!");
+		$( ".score" ).each(function() {
+		$(this).delay(2000).fadeIn();
 		});
-			
-	start();
+		$(".start").delay(2000).fadeIn();
+	}else{
+		round++;
+		$("#num").text(round);
+		$(".next").hide();
+		$( ".score" ).each(function() {
+			$(this).hide();
+		});
+		$("#message").removeClass("correct-txt");
+		$( ".select" ).each(function() {
+				$(this).removeClass("correct");
+				$(this).removeClass("incorrect");
+			});
+
+		start();
+
+		$( ".select" ).each(function() {
+			$(this).fadeIn(1000);
+		});
+	}
 	
-	$( ".select" ).each(function() {
-		$(this).fadeIn(1000);
-	});
 	
 });
+$(".begin").click(function(){
+	$(".rules").slideUp(2000);
+	$(".qanda").delay(2000).fadeIn(3000);
+	$(".header").delay(2000).fadeIn(3000);
+});
 $(document).ready(function(){
+	$(".rules").slideDown(2000);
+	
 	start();		
 });
 function start(){
+	points=4;
 	question = getQuestion();
 	answers = getAnswers(question);
+	$( ".score" ).each(function() {
+			$(this).hide();
+		});
 	$("#question").text(Questions[question].q);
 		var select = document.querySelectorAll(".select");
 		for (var i=0;i<answers.length;i++){

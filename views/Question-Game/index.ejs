@@ -17,8 +17,8 @@
 			</div>
 			<div class ="qanda">
 				<div class="question">
-					<p>
-						Question: 
+					<p id="qnum">
+						Question: <span id="num">1</span>/10
 					</p>
 					<p id="question">
 					
@@ -48,10 +48,26 @@
 							Mesut Ozil
 						</p>
 					</div>
-					
+					<div class= "score score-l">
+						<p>
+							SCORE:
+						</p>
+					</div>
+					<div class= "score score-r">
+						<p>
+							<span id="score">0</span>/40
+						</p>
+					</div>
 				</div>
 				<a href="#" class="next">Next Question &raquo;</a>
+				<a href="/questionnaire" class="start">Start Again</a>
 			</div>
+		</div>
+		<div class="rules">
+			<p>
+				 Answer 10 Questions. Each wrong answer will result in a point deducted from the total score. 
+			</p>
+			<a href="#" class="start begin">Start</a>
 		</div>
 	</div>
 	<script src="../JS/questionnaire.js"></script>
