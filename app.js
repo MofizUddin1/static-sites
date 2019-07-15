@@ -12,6 +12,9 @@ app.get("/patatap",(req,res)=>{
 app.get("/todo",(req,res)=>{
 	res.render("todolistProject/index");
 });
+app.get("/jquery-todo",(req,res)=>{
+	res.render("todolistProject/jQuery-index.ejs");
+});
 app.get("/color-game",(req,res)=>{
 	res.render("colorGame/colorGame");
 });
