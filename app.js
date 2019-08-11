@@ -27,6 +27,9 @@ app.get("/candy",(req,res)=>{
 app.get("/questionnaire",(req,res)=>{
 	res.render("Question-Game/index");
 });
+app.get("/blog",(req,res)=>{
+	res.render("practice-AFC/afc");
+});
 app.listen(process.env.PORT,process.env.IP,()=>{
 	console.log("server started");
 });
